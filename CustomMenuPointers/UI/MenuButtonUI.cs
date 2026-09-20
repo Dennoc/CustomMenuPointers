@@ -21,14 +21,14 @@ namespace CustomMenuPointers.UI
 
             public void Initialize()
             {
-                MenuButtons.instance.RegisterButton(_menuButton);
+                MenuButtons.Instance.RegisterButton(_menuButton);
             }
 
             public void Dispose()
             {
-                if (MenuButtons.IsSingletonAvailable && BSMLParser.IsSingletonAvailable)
-                {
-                    MenuButtons.instance.UnregisterButton(_menuButton);
+            if ((MenuButtons.Instance != null) && (BSMLParser.Instance != null))
+            {
+                    MenuButtons.Instance.UnregisterButton(_menuButton);
                 }
             }
 
